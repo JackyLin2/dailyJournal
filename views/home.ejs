@@ -1,0 +1,28 @@
+<%- include("partials/header")-%>
+
+    <h1> Home </h1>
+
+    <p>
+        <%= homeStartingContent %>
+    </p>
+
+    <% console.log(newPosts) %>
+
+
+
+        <% newPosts.forEach(function(post){ %>
+          <%  let length = 100  %>
+          <%  let bodyLength = post.body  %>
+          <%  let trumcatedString = bodyLength.substring(0, length) %>
+            <h1>
+                <%= post.title %>
+            </h1>
+            <p>
+                <%= trumcatedString + "..." %>
+                <a href="/posts/<%=post.title%>" > Read More</a>
+            </p>
+
+            <% }) %>
+
+
+                <%- include("partials/footer") -%>
