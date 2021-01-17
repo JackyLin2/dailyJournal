@@ -33,9 +33,6 @@ app.get("/posts/:postName", function(req,res){
       res.render("post",{ singlePost: post.title, singleBody: post.body})
     }
   })
-
-
-
 })
 
 app.get("/about", function(req, res){
