@@ -1,28 +1,26 @@
 <%- include("partials/header")-%>
 
-    <h1> Home </h1>
+<h1> Home </h1>
 
-    <p>
-        <%= homeStartingContent %>
-    </p>
+<p>
+    <%= homeStartingContent %>
+</p>
 
-    <% console.log(newPosts) %>
-
-
-
-        <% newPosts.forEach(function(post){ %>
-          <%  let length = 100  %>
-          <%  let bodyLength = post.body  %>
-          <%  let trumcatedString = bodyLength.substring(0, length) %>
-            <h1>
-                <%= post.title %>
-            </h1>
-            <p>
-                <%= trumcatedString + "..." %>
-                <a href="/posts/<%=post.title%>" > Read More</a>
-            </p>
-
-            <% }) %>
+<% newPosts.forEach(function(post){ %>
 
 
-                <%- include("partials/footer") -%>
+
+
+<h1>
+    <%= post.title %>
+</h1>
+<p>
+    <% console.log(post._id) %>
+    <%= post.body.substring(0,100) + "..."  %>
+    <a href="/posts/<%=post._id%>"> Read More</a>
+</p>
+
+<% }) %>
+
+
+<%- include("partials/footer") -%>
