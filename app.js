@@ -18,8 +18,14 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 const postSchema = new mongoose.Schema({
-  title: String,
-  body: String
+  title: {
+    type: String,
+    required: [true, "Please Provide a Title"]
+  },
+  body: {
+    type: String,
+    required: [true, "Please Provide Content"]
+  }
 })
 
 const Post = mongoose.model("Post", postSchema)
